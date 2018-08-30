@@ -5,9 +5,27 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title= title
+        style.
+            *, *:after, *:before {
+                margin: 0;
+                padding: 0;
+            }
+            p {
+                padding: 0 15px;
+                margin-bottom: 1px;
+            }
+            p:hover {
+                background-color: #eee;
+            }
+            p span.line {
+                margin-right: 15px;
+            }
     body
-        each line in data
-            p !{line}
+        each line, id in data
+            pre
+                p
+                    span.line= id
+                    | !{line}
         script.
             setInterval(() => {
                 location.reload()
